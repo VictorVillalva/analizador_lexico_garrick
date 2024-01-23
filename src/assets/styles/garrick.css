@@ -133,5 +133,23 @@ p{
     font-family: 'Inter', sans-serif;
 }
 
+.limpiar{
+    background: #ee4141;
+}
+.limpiar:hover{
+    background:#fff;
+    color:#ee4141;
+}
+.limpiar:before,.limpiar:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #ee4141;
+    transition:400ms ease all;
+}
+
 
 

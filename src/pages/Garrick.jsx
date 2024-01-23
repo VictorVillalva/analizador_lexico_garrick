@@ -76,6 +76,11 @@ function Garrick (){
         setLexema(lexemas);
     }
 
+    const handleClear = () =>{
+        setLexema([])
+        setToken([])
+    }
+
     const  handlerStringChange =(e)=>{
         setString(e.target.value)
     }
@@ -95,21 +100,22 @@ function Garrick (){
                     <div className='ingreso_caracteres'>
                         <input type="text" onChange={handlerStringChange}/>
                         <button onClick={analizar}>Analizar</button>
+                        <button className='limpiar' onClick={handleClear} >Limpiar</button>
                     </div>
                     <div className="datos">
                         <div className="tipo">
                             <p className="tipo_txt"> | Tokens</p>
-                            <div className="tokens">
+                            <div className="tokens" id='tok'>
                                 {token.map((token, index) => (
-                                    <p key={index}>{token}</p>
+                                    <p  key={index}>{token}</p>
                                 ))}
                             </div>
                         </div>
                         <div className="tipo">
                             <p className="tipo_txt"> | Lexemas</p>
-                            <div className="lexemas">
+                            <div className="lexemas" id='lex'>
                                 {lexama.map((lexama, index) => (
-                                    <p key={index}>{lexama}</p>
+                                    <p  key={index}>{lexama}</p>
                                 ))}
                             </div>
                         </div>
