@@ -62,8 +62,13 @@ function Garrick (){
             } else if (/[a-z]+[0-9]*/.test(element)) {
                 token = "identificador";
                 lexema = element;
-            } else {
+            } else if(/[0-9]+/.test(element)){
+                token = "numero";
+                lexema = element;
+            }else {
                 console.log(element, " is not part of the grammar");
+                token = "ERROR"
+                lexema = element
 
             }
 
