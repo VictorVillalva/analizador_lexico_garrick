@@ -154,5 +154,9 @@ p{
     transition:400ms ease all;
 }
 
+textarea{
 
+    width: 600px;
+    height: 100px;
+}
 

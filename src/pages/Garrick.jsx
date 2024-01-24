@@ -31,7 +31,10 @@ function Garrick (){
         "!": "operador-Simbolo",
         "<=": "operador-Simbolo",
         ">=": "operador-Simbolo",
+        "=" : "operador-Simbolo",
+        ",": "coma-Simbolo",
         ";" : "puntoComa-Simbolo",
+        ".": "punto-Simbolo",
         '"': "comilla-Simbolo",
 
     }
@@ -103,7 +106,7 @@ function Garrick (){
             <section className="dos">
                 <div className="ingreso_datos">
                     <div className='ingreso_caracteres'>
-                        <input type="text" onChange={handlerStringChange}/>
+                        <textarea type="text" onChange={handlerStringChange}/>
                         <button onClick={analizar}>Analizar</button>
                         <button className='limpiar' onClick={handleClear} >Limpiar</button>
                     </div>
