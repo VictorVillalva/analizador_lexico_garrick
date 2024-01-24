@@ -58,7 +58,7 @@ function Garrick (){
                 lexema = element;
             } else if (/^"[^"]*"$/.test(element)) {
                 token = "cadena";
-                lexema = element.slice(1, -1); // Eliminar las comillas alrededor de la cadena
+                lexema = element.slice(1, -1);
             } else if (/[a-z]+[0-9]*/.test(element)) {
                 token = "identificador";
                 lexema = element;

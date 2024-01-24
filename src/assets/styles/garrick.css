@@ -112,6 +112,7 @@ input:focus,.box input:active,.box button:focus,.box button:active{
     border-radius: 3px;
     border: 1px solid #FFFFFF;
     background-color: #FFFFFF;
+
 }
 .data{
     font-family: 'Inter', sans-serif;
