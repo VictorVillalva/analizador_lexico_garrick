@@ -112,6 +112,8 @@ input:focus,.box input:active,.box button:focus,.box button:active{
     border-radius: 3px;
     border: 1px solid #FFFFFF;
     background-color: #FFFFFF;
+    overflow: auto;
+    max-height: 20rem;
 
 }
 .data{
