@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './normalize.css'
-import Garrick2 from "./pages/Garrick2.jsx";
+import Garrick from "./pages/Garrick.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Garrick2/>
+      <Garrick/>
   </React.StrictMode>,
 )
