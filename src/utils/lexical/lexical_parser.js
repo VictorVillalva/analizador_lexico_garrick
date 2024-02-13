@@ -1,4 +1,5 @@
 import {useState} from "react";
+import Swal from "sweetalert2";
 
 export function useTokenAndLexemaState() {
     const [token, setToken] = useState([]);
@@ -76,8 +77,13 @@ export function lexicalParseValidator(string, setToken, setLexema) {
             console.log(element, " is not part of the grammar");
             token = "ERROR"
             lexema = element
-            //TODO: BREAK ALERT SYSTEM
-            break
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "error de lexico encontrado",
+                footer: '<a>Revise que no se presenten errores ortograficos</a>'
+            });
+            return false
 
         }
 
@@ -88,6 +94,7 @@ export function lexicalParseValidator(string, setToken, setLexema) {
     }
     setToken(tokens);
     setLexema(lexemas);
+    return true
 }
 
 export const handleClear = () =>{

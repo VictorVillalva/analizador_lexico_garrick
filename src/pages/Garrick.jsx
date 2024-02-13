@@ -14,8 +14,11 @@ function Garrick (){
     }
 
     const handleAnalizar = () => {
-        lexicalParseValidator(string,setToken,setLexema);
-        syntaxParserValidator(string.replace(/\s/g, ""))
+        let lexico = lexicalParseValidator(string,setToken,setLexema);
+        if(lexico){
+            syntaxParserValidator(string.replace(/\s/g, ""))
+        }
+
     }
 
 
