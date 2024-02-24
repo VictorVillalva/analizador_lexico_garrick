@@ -1,4 +1,9 @@
-# React + Vite
+# Analizador Lenguaje Garrick
+
+Se genera un analizador el cual revisa el lenguaje creado por nosotros llamado Garrick
+
+#Tecnologias
+ * React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
