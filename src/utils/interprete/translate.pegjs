@@ -51,7 +51,10 @@ variableDeclaration =
 variableAssignation =
   id:identifier ":" value:number { return id + ' = ' + value; } /
   id:identifier ":" value:string { return id + ' = ' + value; } /
-  id:identifier ":" value:boolean { return id + ' = ' + value; }
+  id:identifier ":" value:boolean { return id + ' = ' + value; } /
+  id:identifier "+:" value:number { return id + ' += ' + value; } /
+  id:identifier "+:" value:string { return id + ' += ' + value; } /
+  id:identifier "-:" value:number { return id + ' -= ' + value; }
 
 comparisonOperator = "==" / "!=" / "<" / ">" / ">=" / "<=" { return text(); }
 

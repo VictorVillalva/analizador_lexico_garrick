@@ -27,6 +27,8 @@ const gramatica = {
     ")": "parentesis-cerraduraSimbolo",
     "{": "corchete-aperturaSimbolo",
     "}": "corchete-cierreSimbolo",
+    "+":"operador-simbolo",
+    "-":"operador-simbolo",
     ":": "asignacion-simbolo",
     "int": "tipo-Dato",
     "str": "tipo-Dato",
