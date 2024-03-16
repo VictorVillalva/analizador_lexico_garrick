@@ -3,6 +3,7 @@ import '../assets/styles/garrick.css'
 import {lexicalParseValidator} from "../utils/lexical/lexical_parser.js";
 import { useTokenAndLexemaState} from "../utils/lexical/lexical_parser.js";
 import {syntaxParserValidator} from "../utils/systax/syntax_parser.js";
+import {peg$parse} from "../utils/interprete/translate.js";
 
 
 function Garrick (){
@@ -13,10 +14,26 @@ function Garrick (){
         setString(e.target.value)
     }
 
+    const translate =()=>{
+        try{
+            const generateCod = peg$parse(string.replace(/\s/g, ""))
+            // Guardar el código generado en un archivo
+            const blob = new Blob([generateCod], { type: 'text/javascript' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'codigo_generado.js';
+            a.click();
+            URL.revokeObjectURL(url);
+        }catch (e) {
+            console.error(e)
+        }
+    }
     const handleAnalizar = () => {
         let lexico = lexicalParseValidator(string,setToken,setLexema);
         if(lexico){
             syntaxParserValidator(string.replace(/\s/g, ""))
+            translate()
         }
 
     }
