@@ -1,6 +1,8 @@
 start = program;
 
-program = statement+;
+program = statements:statement+ {
+    return statements.join('\n');
+};
 
 statement = writeStatement / funcDeclaration / classDeclaration / ifStatement / foreStatement / funcCalling / variableDeclaration / variableAssignation
 
