@@ -4,7 +4,7 @@ program = statement+;
 
 statement = writeStatement / funcDeclaration / classDeclaration / ifStatement / foreStatement / funcCalling / variableDeclaration / variableAssignation
 
-writeStatement = "write" "(" str:identifier ")" {
+writeStatement = "write" '("' str:identifier '")' {
     return 'console.log("' + str + '");';
 }
 
@@ -43,8 +43,6 @@ variableAssignation =
   id:identifier ":" value:number { return id + ' = ' + value; } /
   id:identifier ":" value:string { return id + ' = ' + value; } /
   id:identifier ":" value:boolean { return id + ' = ' + value; }
-
-
 
 comparisonOperator = "==" / "!=" / "<" / ">" / ">=" / "<=" { return text(); }
 
