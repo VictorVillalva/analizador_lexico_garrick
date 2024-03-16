@@ -1,7 +1,7 @@
 //? IMPORTANTE
 //! FALTA CORREGIR QUE LOS LOGS SOPORTEN ESPACIOS EN LA CADENA
 //! FALTA CORREGIR QUE LOS CONDICIONALES ACEPTEN : <= Y >=
-//! FALTA AGREGAR QUE SE ENTRELACEN LAS FUNCIONES Y QUE SE GENERE BONITO EL JS
+//! FALTA QUE AL INTERPRETAR LAS FUNC PONGA LOS ()
 
 /*
 
@@ -15,20 +15,25 @@ writeStatement = "write" '("' str:identifier '")' {
     return 'console.log("' + str + '");';
 }
 
-classDeclaration = "Class" str:identifier "(" ")" "{" "}" {
-    return 'class ' + str + '{}';
+classDeclaration =
+  "Class" str:identifier "(" ")" "{" body:classBody "}" {
+    return 'class ' + str + ' {\n' + body.join('\n') + '\n}';
+  }
+
+classBody = (funcCalling / funcDeclaration / writeStatement / ifStatement / foreStatement / variableDeclaration / variableAssignation)*;
+
+funcDeclaration = "func" str:identifier "(" ")" "{" body:funcBody "}" {
+    return 'function ' + str + ' {\n' + body.join('\n') + '\n}';
 }
 
-funcDeclaration = "func" str:identifier "(" ")" "{" "}" {
-    return 'function ' + str + '(){}';
+funcBody = (funcCalling / writeStatement / ifStatement / foreStatement / variableDeclaration / variableAssignation)*;
+
+ifStatement = "if" "(" left:identifier operator:comparisonOperator right:(identifier / number) ")" "{" body:funcBody "}" {
+    return 'if (' + left + ' ' + operator + ' ' + right + ') {\n' + body.join('\n') + '\n}';
 }
 
-ifStatement = "if" "(" left:identifier operator:comparisonOperator right:(identifier / number) ")" "{" "}" {
-    return 'if (' + left + ' ' + operator + ' ' + right + ') {}';
-}
-
-foreStatement = "fore" "(" left:identifier operator:comparisonOperator right:(identifier / number) ")" "{" "}" {
-    return 'while (' + left + ' ' + operator + ' ' + right + ') {}';
+foreStatement = "fore" "(" left:identifier operator:comparisonOperator right:(identifier / number) ")" "{" body:funcBody "}" {
+    return 'while (' + left + ' ' + operator + ' ' + right + ') {\n' + body.join('\n') + '\n}';
 }
 
 funcCalling = id:identifier "(" ")" {
