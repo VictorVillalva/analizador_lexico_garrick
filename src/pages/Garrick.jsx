@@ -3,6 +3,8 @@ import '../assets/styles/garrick.css'
 import {lexicalParseValidator} from "../utils/lexical/lexical_parser.js";
 import { useTokenAndLexemaState} from "../utils/lexical/lexical_parser.js";
 import {syntaxParserValidator} from "../utils/systax/syntax_parser.js";
+import {peg$parse} from "../utils/interprete/translate.js";
+import {translate} from "../utils/interprete/interpreter.js";
 
 
 function Garrick (){
@@ -13,12 +15,15 @@ function Garrick (){
         setString(e.target.value)
     }
 
-    const handleAnalizar = () => {
-        let lexico = lexicalParseValidator(string,setToken,setLexema);
-        if(lexico){
-            syntaxParserValidator(string.replace(/\s/g, ""))
-        }
 
+    const handleAnalizar = () => {
+        let lexicalValidate = lexicalParseValidator(string,setToken,setLexema);
+        if(lexicalValidate){
+            let syntaxValidate =syntaxParserValidator(string.replace(/\s/g, ""))
+            if (syntaxValidate){
+                translate(string.replace(/\s/g, ""))
+            }
+        }
     }
 
 
