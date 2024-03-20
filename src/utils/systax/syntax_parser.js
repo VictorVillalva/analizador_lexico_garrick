@@ -11,6 +11,7 @@ export function syntaxParserValidator(string) {
                 text: string,
                 icon: "success"
             });
+            return true
         }
 
 
@@ -23,10 +24,12 @@ export function syntaxParserValidator(string) {
                 text: error.message,
                 footer: '<a>Revise que la gramatica sea la correcta</a>'
             });
+            return false
 
 
         } else {
             console.error("Error al analizar:", error);
+            return false
         }
     }
 }

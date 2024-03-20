@@ -4,7 +4,7 @@ program = statements:statement+ {
     return statements.join('\n');
 };
 
-statement = writeStatement / funcDeclaration / classDeclaration / ifStatement / foreStatement / funcCalling / variableDeclaration / variableAssignation
+statement = writeStatement / funcDeclaration / classDeclaration / ifStatement / foreStatement / funcCalling / variableDeclaration / variableAssignation / moduloDeclaration
 
 writeStatement = "write" '("' str:identifier '")' {
     return 'console.log("' + str + '");';
@@ -56,6 +56,9 @@ variableAssignation =
   id:identifier "+:" value:string { return id + ' += ' + value; } /
   id:identifier "-:" value:number { return id + ' -= ' + value; }
 
+
+moduloDeclaration = "modulo" name:identifier  ".util" { return "//modulo " + name + ".util"; }
+
 comparisonOperator = "==" / "!=" / "<" / ">" / ">=" / "<=" { return text(); }
 
 identifier = [a-zA-Z]+ { return text(); }
@@ -63,3 +66,7 @@ number = [0-9]+ { return text(); }
 string = '"' id:identifier '"' { return '"' + id + '"'; }
 boolean = "true" / "false" { return text(); }
 readingFunc = identifier { return identifier; }
+
+
+
+
