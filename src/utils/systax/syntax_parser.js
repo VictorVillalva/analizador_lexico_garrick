@@ -2,12 +2,13 @@ import {peg$parse, peg$SyntaxError} from "./grammar.js";
 import Swal from 'sweetalert2'
 
 
+
 export function syntaxParserValidator(string) {
     try {
         const ast = peg$parse(string);
         if(ast){
             Swal.fire({
-                title: "sintaxis correcta!",
+                title: "Sintaxis correcta!",
                 text: string,
                 icon: "success"
             });
@@ -26,7 +27,7 @@ export function syntaxParserValidator(string) {
 
 
         } else {
-            console.error("Error al analizar:", error);
+            console.error("Error al analizar: ", error);
         }
     }
 }
