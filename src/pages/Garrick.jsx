@@ -37,7 +37,8 @@ function Garrick (){
             <section className="dos">
                 <div className="ingreso_datos">
                     <div className='ingreso_caracteres'>
-                        <textarea type="text" onChange={handlerStringChange}/>
+                        
+                        <textarea type="text" onChange={handlerStringChange} className="code-garrick"/>
                         <button onClick={handleAnalizar}>Analizar</button>
                         <button className='limpiar' onClick={handleClear} >Limpiar</button>
                     </div>
@@ -59,6 +60,7 @@ function Garrick (){
                             </div>
                         </div>
                     </div>
+                    <div className="code-garrick-result" id="garrick"></div>
                 </div>
             </section>
         </>

@@ -160,3 +160,12 @@ textarea{
     height: 100px;
 }
 
+.code-garrick{
+    font-family: 'JetBrains Mono', sans-serif;
+}
+.code-garrick-result{
+    margin-top: 10%;
+    width: 100%;
+    height: 50%;
+    background-color: white;
+}

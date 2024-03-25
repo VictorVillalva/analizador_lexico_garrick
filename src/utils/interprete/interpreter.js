@@ -12,15 +12,10 @@ export function translate (string){
                 icon: "success"
             });
             
-            const contentInQuotes = generateCod.match(/"(.*?)"/); // Expresión regular para encontrar contenido entre comillas
-            if (contentInQuotes) {
-                console.log(contentInQuotes[1]); // Imprimir solo el contenido entre comillas
-            }
-            // Abrir una nueva ventana y escribir el código generado en ella
-            // const newWindow = window.open();
-            // newWindow.document.write('<html><head><title>Garrick-v1.js</title></head><body><script>');
-            // newWindow.document.write(generateCod);
-            // newWindow.document.write('</script></body></html>');
+            const capturedOutput = captureConsoleOutput(() => {
+                eval(generateCod);
+            });
+            mostrarResultado(capturedOutput);
         }
 
     } catch (error) {
@@ -37,4 +32,21 @@ export function translate (string){
         }
         return false;
     }
+}
+// Función para capturar la salida de console.log
+function captureConsoleOutput(callback) {
+    let capturedOutput = '';
+    const originalConsoleLog = console.log;
+    console.log = function(message) {
+        capturedOutput += message + '\n';
+    };
+    callback();
+    console.log = originalConsoleLog;
+    return capturedOutput;
+}
+
+// Función para mostrar el resultado en la interfaz
+function mostrarResultado(resultado) {
+    const resultadoElemento = document.getElementById('garrick');
+    resultadoElemento.innerText = resultado;
 }
