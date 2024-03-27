@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap');
+/* Global Configuration*/
+body{
+    background: #080808;
+}
+p,h1,h2,span{
+    font-family: 'Inter', sans-serif;
+    color: white;
+    line-height: 0;
+}
+textarea{
+    resize: none;
+    font-family: 'JetBrains Mono', sans-serif;
+}
+textarea:focus{
+    outline: none;
+}
+header{
+    width: 100%;
+    height: 15vw;
+    padding-top: 3rem;
+}
+
+
+.title{
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: normal;
+    background: linear-gradient(90deg, #FFF 0.05%, #9D0C0C 40.42%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 3.38rem;
+}
+.subtitle{
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 0;
+    margin-left: 3.38rem;
+}
+.name-language{
+    font-weight: 900;
+}
+/* Section 1 - Code editor and Show tokens/lexemas */
+.container{
+    width: 100%;
+    display: flex;
+}
+.txt-editor-code, .txt-lexemas, .txt-tokens{
+    font-weight: 300;
+}
+.code-data-garrick{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3.38rem;
+}
+.show-editor-code{
+    background-color: white;
+    width: 50vw;
+    height: 34.625rem;
+}
+.tokens-lexemas{
+    margin-left: 3vw;
+}
+.show-tokens,.show-lexemas{
+    background-color: white;
+    width: 27.4375rem;
+    height: 15.625rem;
+    font-family: 'JetBrains Mono', sans-serif;
+    padding: .5vw;
+    border-radius: 5px;
+    overflow: auto;
+    max-height: 15.625rem;
+}
+.buttons{
+    margin-top: 2vw;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.compile{
+    font-family: 'Inter', sans-serif;
+    background:#1AAB8A;
+    color:#fff;
+    border:none;
+    position:relative;
+    width: 20.4375rem;
+    font-size:1em;
+    padding:0.625rem;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.compile:hover{
+    background:#fff;
+    color:#1AAB8A;
+}
+.compile:before,.compile:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #1AAB8A;
+    transition:400ms ease all;
+}
+.compile:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.compile:hover:before,.compile:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
+.clear{
+    font-family: 'Inter', sans-serif;
+    background: #ee4141;
+    color:#fff;
+    border:none;
+    position:relative;
+    width: 20.4375rem;
+    font-size:1em;
+    padding:0.625rem;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+}
+.clear:hover{
+    background:#fff;
+    color:#ee4141;
+}
+.clear:before,.clear:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #ee4141;
+    transition:400ms ease all;
+}
+.clear:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+}
+.clear:hover:before,.clear:hover:after{
+    width:100%;
+    transition:800ms ease all;
+}
