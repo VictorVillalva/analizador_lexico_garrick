@@ -1,7 +1,7 @@
 import {useState} from "react";
 import '../assets/styles/garrick.css'
 import {lexicalParseValidator} from "../utils/lexical/lexical_parser.js";
-import { useTokenAndLexemaState} from "../utils/lexical/lexical_parser.js";
+import {useTokenAndLexemaState} from "../utils/lexical/lexical_parser.js";
 import {syntaxParserValidator} from "../utils/systax/syntax_parser.js";
 import {translate} from "../utils/interprete/interpreter.js";
 

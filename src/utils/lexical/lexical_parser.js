@@ -8,6 +8,7 @@ export function useTokenAndLexemaState() {
     const handleClear = () => {
         setLexema([]);
         setToken([]);
+        
     };
 
     return { token, lexama, setToken, setLexema, handleClear };

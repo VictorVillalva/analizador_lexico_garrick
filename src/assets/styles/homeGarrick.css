@@ -11,6 +11,8 @@ p,h1,h2,span{
 textarea{
     resize: none;
     font-family: 'JetBrains Mono', sans-serif;
+    padding-left: 1vw;
+    padding-top: 1vw;
 }
 textarea:focus{
     outline: none;
@@ -46,7 +48,7 @@ header{
     width: 100%;
     display: flex;
 }
-.txt-editor-code, .txt-lexemas, .txt-tokens{
+.txt-editor-code, .txt-lexemas, .txt-tokens, .txt-show-code{
     font-weight: 300;
 }
 .code-data-garrick{
@@ -153,4 +155,23 @@ header{
 .clear:hover:before,.clear:hover:after{
     width:100%;
     transition:800ms ease all;
+} 
+/*Section two -  Show result of garrick code*/
+.show-code{
+    margin-left: 3.38rem;
+    margin-bottom: 5vw;
+    margin-top: 5vw;
+}
+.show-code-garrick{
+    background-color: white;
+    width: 86vw;
+    height: 15vw;
+    padding: 1vw;
+    font-family: 'JetBrains Mono', sans-serif;
+    font-size: .8rem;
+    border-radius: 2px;
+}
+.toklex{
+    color: black;
+    margin-bottom: 2vw;
 }
