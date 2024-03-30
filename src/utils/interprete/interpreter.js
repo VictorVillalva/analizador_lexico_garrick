@@ -1,6 +1,7 @@
 import {peg$parse} from "./translate.js";
 import Swal from "sweetalert2";
 import {peg$SyntaxError} from "../systax/grammar.js";
+import { useState } from "react";
 
 export function translate (string){
     try{
@@ -29,6 +30,8 @@ export function translate (string){
             });
         } else {
             console.error("Error al analizar:", error);
+            const errorCode = document.getElementById('garrick');
+            errorCode.innerText = error
         }
         return false;
     }

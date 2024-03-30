@@ -24,6 +24,16 @@ const homeGarrick = () => {
         }
     }
 
+    const limpiarContenido = () => {
+        const divElemento = document.getElementById('garrick');
+        divElemento.innerText = ""; // O divElemento.innerHTML = "";
+    };
+
+    const clearDivs = () => {
+        limpiarContenido();
+        handleClear();
+    }
+
     return(
         <>
         <header>
@@ -40,7 +50,7 @@ const homeGarrick = () => {
                         <textarea className='show-editor-code' type='text' onChange={handlerStringChange}></textarea>
                         <div className="buttons">
                             <button className="compile" onClick={handlerCompile}>Compilar</button>
-                            <button className="clear" onClick={handleClear}>Limpiar</button>
+                            <button className="clear" onClick={clearDivs}>Limpiar</button>
                         </div>
                     </div>
                     <div className="tokens-lexemas">

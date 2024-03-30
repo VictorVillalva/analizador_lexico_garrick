@@ -5,10 +5,10 @@ export function useTokenAndLexemaState() {
     const [token, setToken] = useState([]);
     const [lexama, setLexema] = useState([]);
 
+
     const handleClear = () => {
         setLexema([]);
         setToken([]);
-        
     };
 
     return { token, lexama, setToken, setLexema, handleClear };
